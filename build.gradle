@@ -11,16 +11,9 @@ repositories {
 }
 
 dependencies {
-//    testImplementation 'org.jetbrains.kotlin:kotlin-test'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
-    testImplementation 'org.junit:junit-bom:5.4.2'
-    testImplementation 'org.testng:testng:7.1.0'
     testImplementation 'junit:junit:4.13.1'
 }
 
-test {
-//    useJUnitPlatform()
-}
 
 compileKotlin {
     kotlinOptions.jvmTarget = '1.8'

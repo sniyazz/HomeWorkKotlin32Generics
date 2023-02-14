@@ -86,9 +86,9 @@ object NotesService { //Create Note
                     privacy = note.privacy,
                     commentPrivacy = note.commentPrivacy
                 )
+                return notes[index]
             }
-        return note
-//        throw NoteNotFoundException("Not found Note ID $noteId")
+        throw NoteNotFoundException("Not found Note ID $noteId")
     }
 
     fun getNotes() {
@@ -125,8 +125,9 @@ object NotesService { //Create Note
             if (com.commentId == commentId && !com.deleted) {
                 comments[index] = comment.copy(message = comment.message)
             }
+            return comments[index]
         }
-        return comment
+        throw NoteNotFoundException("Not found Note ID $commentId")
     }
 
     fun removeComment(noteId: Int, commentId: Int): NoteСomment {
