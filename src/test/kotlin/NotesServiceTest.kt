@@ -4,6 +4,13 @@ import org.junit.Assert.*
 
 class NotesServiceTest {
 
+    @before
+    fun clearBefoteTest (){
+        NotesService.clear()
+    }
+
+    annotation class before
+
     @Test
     fun addNote() {
         val noteOne = Note(2,"Title", "Text", 0, 0, false)

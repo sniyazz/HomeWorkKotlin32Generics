@@ -72,6 +72,12 @@ object NotesService { //Create Note
     var comments = emptyArray<NoteСomment>()
     var deletedComments = emptyArray<NoteСomment>()
 
+    fun clear () {
+        notes = emptyArray()
+        comments = emptyArray()
+        deletedComments = emptyArray()
+    }
+
     fun addNote(note: Note): Note {
         notes += note.copy(noteId = note.noteId)
         return notes.last()
