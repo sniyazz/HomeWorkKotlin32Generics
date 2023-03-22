@@ -5,11 +5,9 @@ import org.junit.Assert.*
 class NotesServiceTest {
 
     @before
-    fun clearBefoteTest (){
+    fun clearBeforeTest (){
         NotesService.clear()
     }
-
-    annotation class before
 
     @Test
     fun addNote() {
@@ -31,6 +29,7 @@ class NotesServiceTest {
     }
     @Test
     fun removeNote(){
+        clearBeforeTest()
         val notes = NotesService
         val noteOne = Note(2,"Title", "Text", 0, 0, false)
         val noteTwo = Note(3,"Title", "Text", 0, 0, false)
@@ -70,6 +69,7 @@ class NotesServiceTest {
 
     @Test
     fun removeComment(){
+        clearBeforeTest()
         val notes = NotesService
         val noteOne = Note(2,"Title", "Text", 0, 0, false)
         val commentOne = NoteСomment(2,1,100,"NewComment",false)
@@ -87,6 +87,7 @@ class NotesServiceTest {
 
     @Test
     fun restoreComment(){
+        clearBeforeTest()
         val notes = NotesService
         val noteOne = Note(2,"Title", "Text", 0, 0, false)
         val commentOne = NoteСomment(2,1,100,"NewComment",false)
@@ -104,3 +105,5 @@ class NotesServiceTest {
         assertEquals(commentsSize, 2)
     }
 }
+
+annotation class before
